@@ -90,14 +90,14 @@
     
     //print each cars details (owner, model, fuel economy, current mileage, fuel level)
     public static void printCars(Car[] cars) {
-        String lineBreak = "\n------------------------------------------------------------------------------";
+        String lineBreak = "\n------------------------------------------------------------------------------------";
         
-        System.out.println(lineBreak + "\n\t\tOwner\t\tVehicle\t\t\tMPG\t\t\tGallons\t\t\tMileage" + lineBreak);
+        System.out.printf("%s \n%10s\t%14s\t%12s\t%10s\t%10s \n%s" , lineBreak , "Owner" , "Vehicle" , "MPG" , "Gallons" , "Mileage" , lineBreak);
 
         for(int i = 0; i < cars.length; i++) { 
             double mileage = cars[i].getOdometer().getMileage();
             double gallons = cars[i].getFuelGauge().getGallons();
-            System.out.printf("\n%10s \t %14s \t %10.2f \t%10.2f \t%10.2f",  cars[i].getOwner() , cars[i].getModel() , cars[i].getMpg() , gallons , mileage);
+            System.out.printf("\n%10s \t %14s \t %5.2f \t%10.2f \t%10.2f",  cars[i].getOwner() , cars[i].getModel() , cars[i].getMpg() , gallons , mileage);
         }
     }
     
