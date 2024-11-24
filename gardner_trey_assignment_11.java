@@ -90,11 +90,14 @@
     
     //print each cars details (owner, model, fuel economy, current mileage, fuel level)
     public static void printCars(Car[] cars) {
-        String lineBreak = "\n---------------------------------------------------------------";
+        String lineBreak = "\n------------------------------------------------------------------------------";
         
-        System.out.println(lineBreak + "\nOwner\tVehicle\t\tMPG\tGallons\t\tMileage" + lineBreak);
+        System.out.println(lineBreak + "\n\t\tOwner\t\tVehicle\t\t\tMPG\t\t\tGallons\t\t\tMileage" + lineBreak);
+
         for(int i = 0; i < cars.length; i++) { 
-            System.out.printf("\n" + cars[i].getOwner() + "\t\t" + cars[i].getModel() +  "\t\t" + cars[i].getMpg() + "\t", cars[i].getFuelGauge().getGallons() + "\t" +  cars[i].getOdometer().getMileage());
+            double mileage = cars[i].getOdometer().getMileage();
+            double gallons = cars[i].getFuelGauge().getGallons();
+            System.out.printf("\n%10s \t %14s \t %10.2f \t%10.2f \t%10.2f",  cars[i].getOwner() , cars[i].getModel() , cars[i].getMpg() , gallons , mileage);
         }
     }
     
@@ -105,7 +108,7 @@
        int indexCounter = 0;
        boolean allCarsAreEmpty = false;
       final int INTERATION_MILES = 25;
-      System.out.println("\nCars ran out of gas in this order:" + "\n---------------------------------");
+      System.out.println("\n\nCars ran out of gas in this order:" + "\n---------------------------------");
 
        while(allCarsAreEmpty == false){
 
