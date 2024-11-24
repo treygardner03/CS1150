@@ -92,9 +92,9 @@
     public static void printCars(Car[] cars) {
         String lineBreak = "\n---------------------------------------------------------------";
         
-        System.out.println(lineBreak + "\nOwner\tVehicle\tMPG\tGallons\tMileage" + lineBreak);
+        System.out.println(lineBreak + "\nOwner\tVehicle\t\tMPG\tGallons\t\tMileage" + lineBreak);
         for(int i = 0; i < cars.length; i++) { 
-            System.out.println(cars[i].getOwner() + "\t" + cars[i].getModel() +  "\t" + cars[i].getMpg() + "\t" +  cars[i].getFuelGauge().getGallons() + "\t" +  cars[i].getOdometer().getMileage());
+            System.out.printf("\n" + cars[i].getOwner() + "\t\t" + cars[i].getModel() +  "\t\t" + cars[i].getMpg() + "\t", cars[i].getFuelGauge().getGallons() + "\t" +  cars[i].getOdometer().getMileage());
         }
     }
     
@@ -105,7 +105,7 @@
        int indexCounter = 0;
        boolean allCarsAreEmpty = false;
       final int INTERATION_MILES = 25;
-      System.out.println("Cars ran out of gas in this order" + "\n-------------------------------------------------");
+      System.out.println("\nCars ran out of gas in this order:" + "\n---------------------------------");
 
        while(allCarsAreEmpty == false){
 
