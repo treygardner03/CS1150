@@ -92,7 +92,7 @@
     public static void printCars(Car[] cars) {
         String lineBreak = "\n---------------------------------------------------------------";
         
-        System.out.println(lineBreak + "Owner\tVehicle\tMPG\tGallons\tMileage" + lineBreak);
+        System.out.println(lineBreak + "\nOwner\tVehicle\tMPG\tGallons\tMileage" + lineBreak);
         for(int i = 0; i < cars.length; i++) { 
             System.out.println(cars[i].getOwner() + "\t" + cars[i].getModel() +  "\t" + cars[i].getMpg() + "\t" +  cars[i].getFuelGauge().getGallons() + "\t" +  cars[i].getOdometer().getMileage());
         }
@@ -104,13 +104,14 @@
        Car[] carsOutOfGas = new Car[cars.length];
        int indexCounter = 0;
        boolean allCarsAreEmpty = false;
-      final int INTERATION_MILES = 25; 
-       while(allCarsAreEmpty = false){
+      final int INTERATION_MILES = 25;
+      System.out.println("Cars ran out of gas in this order" + "\n-------------------------------------------------");
 
-        System.out.println("Cars ran out of gas in this order" + "\n-------------------------------------------------");
+       while(allCarsAreEmpty == false){
 
         for(int i = 0; i < cars.length; i++){
-            if(cars[i].getFuelLevel().equals("Has Gas")){
+           
+        	if(cars[i].getFuelLevel().equals("Has Gas")){
                 double gallonsNeededForInteration = INTERATION_MILES / cars[i].getMpg();
                 FuelGauge currentFuelGauge = cars[i].getFuelGauge();
                 double currentGallons = currentFuelGauge.getGallons();
@@ -125,6 +126,7 @@
                     cars[i].getFuelLevel("Empty");
                     carsOutOfGas[indexCounter] = cars[i];
                     System.out.println("Ran out of gas: " + cars[i].getOwner());
+                    indexCounter++;
                 }
             }
         }
