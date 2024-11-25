@@ -2,7 +2,8 @@
      * CS1150 (M/W)
      * Assignment #11
      * Due: December 2nd 2024
-     * Description: Using classes, objects, arrays, and inheritance to manipulate cars properties and owners.
+     * Description: Using classes, objects, arrays, and inheritance to 
+     * manipulate cars properties and owners.
      */
     
     
@@ -42,7 +43,6 @@
                 gallons = 8;
             }
         
-    
             if(i == 1) {
                 owner = "Fiona";
                 model = "Audi Q7";
@@ -51,8 +51,6 @@
                 gallons = 10;
             }
         
-    
-    
             if(i == 2) {
                 owner = "Shrek";
                 model = "Jeep CJ5";
@@ -61,8 +59,6 @@
                 gallons = 5;
             }
         
-    
-    
             if(i == 3) {
                 owner = "Farquaad";
                 model = "Smart Car";
@@ -71,8 +67,6 @@
                 gallons = 4;
             }
         
-    
-    
             if(i == 4) {
                 owner = "Dragon";
                 model = "Chevy Suburban";
@@ -84,20 +78,21 @@
             cars[i] = new Car(owner, model, mpg, mileage, gallons);
             
         }
-    
-    
     }
     
     //print each cars details (owner, model, fuel economy, current mileage, fuel level)
     public static void printCars(Car[] cars) {
-        String lineBreak = "\n------------------------------------------------------------------------------------";
+        String lineBreak = "\n-----------------------------------------"
+         + "-------------------------------------------";
         
-        System.out.printf("%s \n%10s\t%14s\t%12s\t%10s\t%10s \n%s" , lineBreak , "Owner" , "Vehicle" , "MPG" , "Gallons" , "Mileage" , lineBreak);
+        System.out.printf("%s \n%10s\t%14s\t%12s\t%10s\t%10s \n%s" , 
+        lineBreak , "Owner" , "Vehicle" , "MPG" , "Gallons" , "Mileage" , lineBreak);
 
         for(int i = 0; i < cars.length; i++) { 
             double mileage = cars[i].getOdometer().getMileage();
             double gallons = cars[i].getFuelGauge().getGallons();
-            System.out.printf("\n%10s \t %14s \t %5.2f \t%10.2f \t%10.2f",  cars[i].getOwner() , cars[i].getModel() , cars[i].getMpg() , gallons , mileage);
+            System.out.printf("\n%10s \t %14s \t %5.2f \t%10.2f \t%10.2f",  
+            cars[i].getOwner() , cars[i].getModel() , cars[i].getMpg() , gallons , mileage);
         }
     }
     
@@ -108,7 +103,8 @@
        int indexCounter = 0;
        boolean allCarsAreEmpty = false;
       final int INTERATION_MILES = 25;
-      System.out.println("\n\nCars ran out of gas in this order:" + "\n---------------------------------");
+      System.out.println("\n\nCars ran out of gas in this order:" + "\n------------------"
+      + "---------------");
 
        while(allCarsAreEmpty == false){
 
@@ -139,7 +135,8 @@
        printCars(carsOutOfGas);
     }
     
-    //checking until ALL cars are out of fuel (true = all cars are out of fuel, false = not all cars are out of fuel)
+    //checking until ALL cars are out of fuel (true = all cars are out of fuel, false =
+    // not all cars are out of fuel)
     public static boolean checkFuelLevels(Car[] cars) {
 
         int counter = 0;
