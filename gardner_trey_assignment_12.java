@@ -1,16 +1,16 @@
 import java.util.Scanner;
 import java.io.IOException;
+import java.io.File;
 public class gardner_trey_assignment_12 {
 	public static void main(String[] args) throws IOException {
 	
-	//saving file path for input
-	String filePath = "\\Users\\TreyG\\Documents\\GitHub\\CS1150\\Animals.txt";
 	//creating instance of the file in program
-	java.io.File animalInfo = new java.io.File(filePath);
+	File animalInfo = new File("Animals.txt");
 	//creating scanner that pulls from instance of file
 	Scanner input = new Scanner(animalInfo);
 	//arrayLenght determined by first line in text ALWAYS
 	int arrayLength = input.nextInt();
+	//declaring String animalType
 	String animalType;
 	//length of array is pulled from "Animals.txt" file	
 	//polymorphic animal array
@@ -20,7 +20,7 @@ public class gardner_trey_assignment_12 {
 	
 	while(input.hasNext()) {
 
-		animalType = input.next();
+		animalType = input.next().trim();
 
 		if(animalType == "Bear") {
 

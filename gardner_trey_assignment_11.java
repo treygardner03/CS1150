@@ -170,7 +170,7 @@
             }
             resultFile.close();
 
-            System.out.println("Find the file here" + carDetailsFile.getAbsolutePath());
+            System.out.println("Find the file here " + carDetailsFile.getAbsolutePath());
             System.out.println();
     }//Write car details to file
    
