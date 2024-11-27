@@ -1,11 +1,83 @@
-
+import java.util.Scanner;
+import java.io.IOException;
 public class gardner_trey_assignment_12 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 	
+	//saving file path for input
+	String filePath = "\\Users\\TreyG\\Documents\\GitHub\\CS1150\\Animals.txt";
+	//creating instance of the file in program
+	java.io.File animalInfo = new java.io.File(filePath);
+	//creating scanner that pulls from instance of file
+	Scanner input = new Scanner(animalInfo);
+	//arrayLenght determined by first line in text ALWAYS
+	int arrayLength = input.nextInt();
+	String animalType;
 	//length of array is pulled from "Animals.txt" file	
 	//polymorphic animal array
-	Animal[] animals = new Animal[];
-		
+	Animal[] animals = new Animal[arrayLength];
+	
+	int indexCounter = 0;
+	
+	while(input.hasNext()) {
+
+		animalType = input.next();
+
+		if(animalType == "Bear") {
+
+			Bear bear = new Bear(input.next(), input.next(), input.nextDouble(),
+			 input.nextDouble(), input.nextLine());
+			animals[indexCounter] = bear;	
+			indexCounter++;
+		}
+
+		if(animalType == "Elephant") { 
+
+			Elephant elephant = new Elephant(input.next(), input.next(),
+			 input.nextDouble(), input.nextDouble(), input.nextLine());
+			animals[indexCounter] = elephant;	
+			indexCounter++;
+		}
+
+		if(animalType == "Monkey") {
+
+			Monkey monkey = new Monkey(input.next(), input.next(), input.nextDouble(),
+			 input.nextDouble(), input.nextLine());
+			animals[indexCounter] = monkey;	
+			indexCounter++;
+		}
+
+		if(animalType == "Sloth") {
+
+			Sloth sloth = new Sloth(input.next(), input.next(), input.nextDouble(),
+			 input.nextDouble(), input.nextLine());
+			animals[indexCounter] = sloth;	
+			indexCounter++;
+		}
+	}
+	input.close();
+
+	for(int i = 0; i < arrayLength; i++) {
+		if(animals[i] instanceof Bear) {
+			animalType = "Bear";
+			System.out.println("animals[" + "i" + "] is a " + animalType
+			 + "\n" + animals[i].toString());
+		}
+		if(animals[i] instanceof Elephant) {
+			animalType = "Elephant";
+			System.out.println("animals[" + "i" + "] is a " + animalType
+			 + "\n" +  animals[i].toString());
+		}
+		if(animals[i] instanceof Monkey) {
+			animalType = "Monkey";
+			System.out.println("animals[" + "i" + "] is a " + animalType
+			 + "\n" +  animals[i].toString());
+		}
+		if(animals[i] instanceof Sloth) {
+			animalType = "Sloth";
+			System.out.println("animals[" + "i" + "] is a " + animalType
+			 + "\n" +  animals[i].toString());
+		}
+	}
 	}
 
 //method that reads file and creates animal objects?
@@ -22,24 +94,127 @@ class Animal{
 	private double timeSleep;
 	private String location;
 
+	public Animal(String name, String food, double weight, double timeSleep,
+	 String location){
+
+		this.name = name;
+		this.food = food;
+		this.weight = weight;
+		this.timeSleep = timeSleep;
+		this.location = location;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	public String getFood() {
+		return this.food;
+	}
+	public double getWeight() {
+		return this.weight;
+	}
+	public double getTimeSleep() {
+		return this.timeSleep;
+	}
+	public String getLocation() {
+		return this.location;
+	}
+	public void eat() {
+		System.out.println("animal is eating");
+	}
+	public void sleep() {
+		System.out.println("animal is sleeping - do not disturb");
+	}
+	public void swim() {
+		System.out.println("animal is swimming");
+	}
 }
 
 //sub class (bear)
 class Bear extends Animal {
 
+	public Bear(String name, String food, double weight, double getTimeSleep,
+	 String location) {
+
+		super(name, food, weight, getTimeSleep, location);
+	}
+
+@Override
+	public String toString() {
+		String temp = "Bear Name: " + this.getName() + " - Weighs: " + this.getWeight()
+		 + "lbs - Sleeps: " + this.getTimeSleep() + "hours - Location: " +this.getLocation();
+		return temp;
+	}
+	@Override
+	public void eat() {
+		System.out.println("Bear is eating " + getFood());
+	}
+	@Override
+	public void sleep() {
+		System.out.println("Bear is sleeping " + getTimeSleep() + " hours");
+	}
+	@Override
+	public void swim() {
+		System.out.println("Bear is swimming");
+	}
 }
 
 //sub class (elephant)
 class Elephant extends Animal {
 
+	public Elephant(String name, String food, double weight, double getTimeSleep,
+	 String location) {
+
+		super(name, food, weight, getTimeSleep, location);
+	}
+@Override
+	public String toString() {
+		String temp = "Elephant Name: " + this.getName() + " - Weighs: " + this.getWeight()
+		 + "lbs - Sleeps: " + this.getTimeSleep() + " hours - Location: " +this.getLocation();
+		return temp;
+	}
+	@Override
+	public void sleep() {
+		System.out.println("Elephant is sleeping " + getTimeSleep() + " hours");
+	}
 }
+
 
 //sub class (monkey)
 class Monkey extends Animal {
 
+	public Monkey(String name, String food, double weight, double getTimeSleep, 
+	String location) {
+
+		super(name, food, weight, getTimeSleep, location);
+	}
+
+@Override
+	public String toString() {
+		String temp = "Monkey Name: " + this.getName() + " - Weighs: " + this.getWeight()
+		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location: " +this.getLocation();
+		return temp;
+	}
+	@Override
+	public void eat() {
+		System.out.println("Monkey is eating " + getFood());
+	}
 }
+
 
 //sub class (sloth)
 class Sloth extends Animal {
 	
+	public Sloth(String name, String food, double weight, double getTimeSleep,
+	 String location) {
+
+		super(name, food, weight, getTimeSleep, location);
+	}
+
+@Override
+	public String toString() {
+		String temp = "Sloth Name: " + this.getName() + " - Weighs: " + this.getWeight()
+		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location: " +this.getLocation();
+		return temp;
+	}
 }
