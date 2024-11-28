@@ -23,7 +23,7 @@ public class gardner_trey_assignment_12 {
 
 		animalType = input.next().trim();
 
-		if(animalType == "Bear") {
+		if(animalType.equals("Bear")) {
 
 			Bear bear = new Bear(input.next(), input.next(), input.nextDouble(),
 			 input.nextDouble(), input.nextLine());
@@ -31,7 +31,7 @@ public class gardner_trey_assignment_12 {
 			indexCounter++;
 		}
 
-		if(animalType == "Elephant") { 
+		if(animalType.equals("Elephant")) { 
 
 			Elephant elephant = new Elephant(input.next(), input.next(),
 			 input.nextDouble(), input.nextDouble(), input.nextLine());
@@ -39,7 +39,7 @@ public class gardner_trey_assignment_12 {
 			indexCounter++;
 		}
 
-		if(animalType == "Monkey") {
+		if(animalType.equals("Monkey")) {
 
 			Monkey monkey = new Monkey(input.next(), input.next(), input.nextDouble(),
 			 input.nextDouble(), input.nextLine());
@@ -47,7 +47,7 @@ public class gardner_trey_assignment_12 {
 			indexCounter++;
 		}
 
-		if(animalType == "Sloth") {
+		if(animalType.equals("Sloth")) {
 
 			Sloth sloth = new Sloth(input.next(), input.next(), input.nextDouble(),
 			 input.nextDouble(), input.nextLine());
@@ -60,23 +60,35 @@ public class gardner_trey_assignment_12 {
 	for(int i = 0; i < arrayLength; i++) {
 		if(animals[i] instanceof Bear) {
 			animalType = "Bear";
-			System.out.println("animals[" + "i" + "] is a " + animalType
+			System.out.println("\nanimals[" + i + "] is a " + animalType
 			 + "\n" + animals[i].toString());
+			animals[i].eat();
+			animals[i].sleep();
+			animals[i].swim();
 		}
 		if(animals[i] instanceof Elephant) {
 			animalType = "Elephant";
-			System.out.println("animals[" + "i" + "] is a " + animalType
+			System.out.println("\nanimals[" + i + "] is a " + animalType
 			 + "\n" +  animals[i].toString());
+			animals[i].eat();
+			animals[i].sleep();
+			animals[i].swim();
 		}
 		if(animals[i] instanceof Monkey) {
 			animalType = "Monkey";
-			System.out.println("animals[" + "i" + "] is a " + animalType
+			System.out.println("\nanimals[" + i + "] is a " + animalType
 			 + "\n" +  animals[i].toString());
+			animals[i].eat();
+			animals[i].sleep();
+			animals[i].swim();
 		}
 		if(animals[i] instanceof Sloth) {
 			animalType = "Sloth";
-			System.out.println("animals[" + "i" + "] is a " + animalType
+			System.out.println("\nanimals[" + i + "] is a " + animalType
 			 + "\n" +  animals[i].toString());
+			animals[i].eat();
+			animals[i].sleep();
+			animals[i].swim();
 		}
 	}
 	}
@@ -143,7 +155,7 @@ class Bear extends Animal {
 @Override
 	public String toString() {
 		String temp = "Bear Name: " + this.getName() + " - Weighs: " + this.getWeight()
-		 + "lbs - Sleeps: " + this.getTimeSleep() + "hours - Location: " +this.getLocation();
+		 + "lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" +this.getLocation();
 		return temp;
 	}
 	@Override
@@ -171,7 +183,7 @@ class Elephant extends Animal {
 @Override
 	public String toString() {
 		String temp = "Elephant Name: " + this.getName() + " - Weighs: " + this.getWeight()
-		 + "lbs - Sleeps: " + this.getTimeSleep() + " hours - Location: " +this.getLocation();
+		 + "lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" + this.getLocation();
 		return temp;
 	}
 	@Override
@@ -193,7 +205,7 @@ class Monkey extends Animal {
 @Override
 	public String toString() {
 		String temp = "Monkey Name: " + this.getName() + " - Weighs: " + this.getWeight()
-		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location: " +this.getLocation();
+		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" + this.getLocation();
 		return temp;
 	}
 	@Override
@@ -215,7 +227,7 @@ class Sloth extends Animal {
 @Override
 	public String toString() {
 		String temp = "Sloth Name: " + this.getName() + " - Weighs: " + this.getWeight()
-		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location: " +this.getLocation();
+		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" + this.getLocation();
 		return temp;
 	}
 }
