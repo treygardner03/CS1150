@@ -12,6 +12,7 @@ public class gardner_trey_assignment_12 {
 	int arrayLength = input.nextInt();
 	//declaring String animalType
 	String animalType;
+
 	//length of array is pulled from "Animals.txt" file	
 	//polymorphic animal array
 	Animal[] animals = new Animal[arrayLength];
