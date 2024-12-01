@@ -1,3 +1,13 @@
+  /* Trey Gardner
+     * CS1150 (M/W)
+     * Assignment #12
+     * Due: December 4th 2024
+	 * Description: Writing a program that creates an array that holds objects that are 
+	 * subclasses of a super class, the information for each object is read off of a 
+	 * .txt file provided by the prof.
+     */
+
+
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.File;
