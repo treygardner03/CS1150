@@ -29,7 +29,7 @@ public class gardner_trey_assignment_12 {
 	
 	int indexCounter = 0;
 	
-	while(input.hasNext()) {
+	for(int i = 0; i < arrayLength; i++) {
 
 		animalType = input.next().trim();
 
