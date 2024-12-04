@@ -11,6 +11,7 @@
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.File;
+
 public class gardner_trey_assignment_12 {
 	public static void main(String[] args) throws IOException {
 	
@@ -162,7 +163,7 @@ class Bear extends Animal {
 		super(name, food, weight, getTimeSleep, location);
 	}
 
-@Override
+	@Override
 	public String toString() {
 		String temp = "Bear Name: " + this.getName() + " - Weighs: " + this.getWeight()
 		 + "lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" +this.getLocation();
@@ -190,7 +191,7 @@ class Elephant extends Animal {
 
 		super(name, food, weight, getTimeSleep, location);
 	}
-@Override
+	@Override
 	public String toString() {
 		String temp = "Elephant Name: " + this.getName() + " - Weighs: " + this.getWeight()
 		 + "lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" + this.getLocation();
@@ -212,7 +213,7 @@ class Monkey extends Animal {
 		super(name, food, weight, getTimeSleep, location);
 	}
 
-@Override
+	@Override
 	public String toString() {
 		String temp = "Monkey Name: " + this.getName() + " - Weighs: " + this.getWeight()
 		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" + this.getLocation();
@@ -234,7 +235,7 @@ class Sloth extends Animal {
 		super(name, food, weight, getTimeSleep, location);
 	}
 
-@Override
+	@Override
 	public String toString() {
 		String temp = "Sloth Name: " + this.getName() + " - Weighs: " + this.getWeight()
 		 + " lbs - Sleeps: " + this.getTimeSleep() + " hours - Location:" + this.getLocation();
