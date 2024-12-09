@@ -55,7 +55,7 @@
                 owner = "Shrek";
                 model = "Jeep CJ5";
                 mpg = 14;
-                mileage = 1180;
+                mileage = 11800;
                 gallons = 5;
             }
         
@@ -122,7 +122,7 @@
                
                 }
                 else{
-                    cars[i].getFuelLevel("Empty");
+                    cars[i].setFuelLevel("Empty");
                     carsOutOfGas[indexCounter] = cars[i];
                     System.out.println("Ran out of gas: " + cars[i].getOwner());
                     indexCounter++;
@@ -205,7 +205,7 @@
         public Odometer getOdometer() {
             return this.odometer;
         }
-        public void getFuelLevel(String fuelLevel) {
+        public void setFuelLevel(String fuelLevel) {
             this.fuelLevel = fuelLevel;
         }
         public Car(String owner, String model, double mpg, double mileage, double gallons) {
